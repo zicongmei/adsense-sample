@@ -1,0 +1,227 @@
+/* Basic Resets */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 90%; /* Default width for mobile */
+    max-width: 1200px; /* Max width for larger screens */
+    margin: auto; /* Center the container */
+    padding: 0 15px; /* Inner padding for content */
+}
+
+/* Header */
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0; /* Padding for the header section itself */
+}
+
+header .container {
+    display: flex;
+    flex-direction: column; /* Stack for mobile */
+    align-items: center;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+/* Navigation */
+nav {
+    width: 100%; /* Ensure nav takes full width within container for mobile centering */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin-bottom: 5px; /* Spacing for stacked mobile links */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px;
+    display: block; /* Make links block-level for easier tapping on mobile */
+    background: #555;
+    border-radius: 5px;
+    text-align: center;
+}
+
+nav ul li a:hover {
+    background: #777;
+}
+
+/* Main Content */
+main {
+    padding-top: 20px; /* Top padding for main content */
+    padding-bottom: 20px; /* Bottom padding for main content */
+}
+
+.hero {
+    background: #e2e2e2;
+    padding: 40px 0; /* Padding for the hero section itself, container will handle width */
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.hero .container {
+    text-align: center; /* Center content inside hero container */
+}
+
+.hero h2 {
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.hero p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.button {
+    display: inline-block;
+    background: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.button:hover {
+    background: #0056b3;
+}
+
+/* Content Section - Cards */
+.content-section .container {
+    display: flex;
+    flex-direction: column; /* Stack cards by default for mobile */
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.card h3 {
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+/* About Us Section */
+.about-us {
+    background: #fdfdfd;
+    padding: 30px 0; /* Padding for the section itself */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.about-us .container {
+    text-align: center; /* Center content inside about-us container */
+}
+
+.about-us h2 {
+    margin-bottom: 15px;
+    color: #007bff;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0; /* Padding for the footer section */
+    margin-top: 20px;
+}
+
+footer .container {
+    text-align: center; /* Center content inside footer container */
+}
+
+
+/* Media Queries for Tablet and Desktop */
+
+/* Medium screens (tablets) */
+@media (min-width: 600px) {
+    header .container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header h1 {
+        margin-bottom: 0;
+    }
+
+    nav {
+        width: auto; /* Allow nav to size based on content for desktop */
+    }
+
+    nav ul {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 0 10px; /* Horizontal spacing */
+    }
+
+    nav ul li a {
+        display: inline-block; /* Revert to inline for horizontal nav */
+        background: none;
+        border-radius: 0;
+        padding: 8px 15px;
+    }
+
+    nav ul li a:hover {
+        background: #555;
+        border-radius: 5px;
+    }
+
+    .content-section .container {
+        flex-direction: row; /* Layout cards horizontally */
+        flex-wrap: wrap; /* Allow wrapping if not enough space */
+        justify-content: center; /* Center cards */
+    }
+
+    .card {
+        flex: 1; /* Allow cards to grow */
+        min-width: 280px; /* Minimum width before wrapping */
+        max-width: 48%; /* Two cards per row, approximately (with gap) */
+    }
+}
+
+/* Large screens (desktops) */
+@media (min-width: 992px) {
+    .content-section .container {
+        flex-wrap: nowrap; /* Prevent wrapping for 3 cards */
+        justify-content: space-between; /* Distribute space */
+    }
+
+    .card {
+        max-width: 31%; /* Three cards per row, approximately (with gap) */
+    }
+}
